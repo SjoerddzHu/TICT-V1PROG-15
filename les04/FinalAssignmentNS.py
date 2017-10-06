@@ -11,10 +11,10 @@ def standaardprijs(afstandKM):
             standaardprijs = 15 + (0.60 * afstandKM)
             return standaardprijs
 
-    elif afstandKM < 0:
+    else:
         standaardprijs = 0
 
-standaardprijs(afstandKM)
+
 
 def ritprijs(leeftijd, weekendrit, standaardprijs):
 
@@ -26,7 +26,7 @@ def ritprijs(leeftijd, weekendrit, standaardprijs):
     elif weekendrit == "nee" and leeftijd >=65 or leeftijd <= 12 :
         korting = (standaardprijs / 100) * 30
         print(korting)
-        print( standaardprijs - korting)
+        print(standaardprijs - korting)
 
     elif weekendrit == "ja" and leeftijd >= 65 or leeftijd <=12 :
         korting = (standaardprijs / 100) * 40
@@ -34,12 +34,13 @@ def ritprijs(leeftijd, weekendrit, standaardprijs):
         print("korting:", korting)
         print("eindprijs: ", standaardprijs - korting)
 
-    elif weekendrit =="nee" and leeftijd <= 65 or leeftijd >=12:
+    else:
         print("standaard prijs: ", standaardprijs)
         print("eindprijs: ", standaardprijs)
         return "je hebt geen recht op korting, je moet ", standaardprijs,"betalen"
 
-ritprijs(leeftijd,weekendrit,standaardprijs(afstandKM))
+prijs = standaardprijs(afstandKM)
+ritprijs(leeftijd, weekendrit, prijs)
 
 
 
