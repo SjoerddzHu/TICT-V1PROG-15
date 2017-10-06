@@ -1,0 +1,7 @@
+pets = ['dog', 'cat', 'fish']
+i = 0
+for i in range(len(pets)):
+    print(pets[i])
+    while i < len(pets):
+        print(pets[i])
+        i = i + 1
