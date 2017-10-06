@@ -3,7 +3,7 @@ stations = ['Schagen', 'Heerhugowaard', 'Alkmaar', 'Castricum', 'Zaandam', 'Áms
 def inlezen_beginstation(stations):
     beginstation = input("wat is je beginstation, kies uit de lijst hierboven: ")
     if beginstation in stations:
-        return beginstation
+        return beginstation and inlezen_eindstation(stations,beginstation)
 
     else:
         print(beginstation, " station staat niet in de lijst ")
@@ -12,10 +12,10 @@ def inlezen_beginstation(stations):
 def inlezen_eindstation(stations, beginstation):
     eindstation = input("Wat is je eindstation, kies weer uit de lijst, let op het station moet na je ingevoerde station komen: ")
     if eindstation in stations and stations.index(eindstation) > stations.index(beginstation):
-        return eindstation
+        return eindstation and omroepen_reis(stations,beginstation,eindstation)
     else:
         print("je ingevoerde station klopt niet, probeeer opnieuw")
-        inlezen_eindstation(stations, beginstation)
+        inlezen_beginstation(stations)
 
 def omroepen_reis(stations,beginstation,eindstation):
     beginstationIndex = stations.index(beginstation)
@@ -34,5 +34,5 @@ def omroepen_reis(stations,beginstation,eindstation):
     print("je reis begint in", beginstation, "en je tussnestations zijn",tussenstations,"en je eindigt in", eindstation )
 
 beginstation = inlezen_beginstation(stations)
-eindstation = inlezen_eindstation(stations, beginstation)
-omroepen_reis(stations, beginstation,eindstation)
+# eindstation = inlezen_eindstation(stations, beginstation)
+# omroepen_reis(stations, beginstation,eindstation)
