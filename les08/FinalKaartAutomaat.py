@@ -1,4 +1,5 @@
 stations = ['Schagen', 'Heerhugowaard', 'Alkmaar', 'Castricum', 'Zaandam', 'Ámsterdam Sloterdijk', 'Amsterdam Centraal', 'Amsterdam Amstel', 'Utrecht Centraal', 'denbosch', 'einhoven', 'Weert', 'Roermond', 'Sittard', 'Maastricht']
+
 def inlezen_beginstation(stations):
     beginstation = input("wat is je beginstation, kies uit de lijst hierboven: ")
     if beginstation in stations:
