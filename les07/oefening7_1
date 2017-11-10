@@ -1,7 +1,23 @@
 pets = ['dog', 'cat', 'fish']
-i = 0
+
 for i in range(len(pets)):
     print(pets[i])
     while i < len(pets):
         print(pets[i])
         i = i + 1
+
+x = range(1,10,1)
+print(x)
+
+for i in range(5,20,5):
+    print(i)
+
+year = 200
+hour = 11
+minute = 36
+print("the year in binary {0:b}{0:20}{1:30}".format(year,hour,minute))
+
+demod = {'groen': 'gras', 'rood': 'vuur', 'geel': 'zon'}
+for i in demod:
+    print(i,'-',demod[i])
+
